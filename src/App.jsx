@@ -1,9 +1,8 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/Experience'
+import Cover from './components/Cover'
+import Hello from './components/Hello'
+import Resume from './components/Resume'
 import Projects from './components/Projects'
-import RecentRuns from './components/RecentRuns'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -12,11 +11,10 @@ export default function App() {
     <>
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Experience />
+        <Cover />
+        <Hello />
+        <Resume />
         <Projects />
-        <RecentRuns />
         <Contact />
       </main>
       <Footer />

@@ -1,16 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-const links = ['About', 'Experience', 'Projects', 'Contact']
+const links = ['About', 'Resume', 'Work']
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [theme, setTheme] = useState('dark') // theme of the chapter currently behind the navbar
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', onScroll)
+    const sections = Array.from(document.querySelectorAll('[data-navtheme]'))
+    const onScroll = () => {
+      const probe = 72
+      let active = sections[0]
+      for (const el of sections) {
+        const r = el.getBoundingClientRect()
+        if (r.top <= probe && r.bottom > probe) { active = el; break }
+        if (r.top <= probe) active = el
+      }
+      if (active) setTheme(active.dataset.navtheme)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const dark = theme === 'dark'
 
   const scrollTo = (id) => {
     setMenuOpen(false)
@@ -18,18 +31,18 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-border' : 'bg-transparent'}`}>
-      <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${dark ? 'text-paper' : 'text-navy'}`}>
+      <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-mono text-sm font-bold text-ink tracking-wider">
-          AL<span style={{color:'#111118'}}>.</span>
+          className="flex items-center gap-2 font-display font-semibold text-lg tracking-tight">
+          <span className={dark ? 'text-amber' : 'text-amber-dark'}>{'{ }'}</span> Acsah Lukose
         </button>
 
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden md:flex items-center gap-9">
           {links.map(link => (
             <li key={link}>
               <button onClick={() => scrollTo(link)}
-                className="text-sm text-muted hover:text-ink transition-colors duration-200 tracking-wide">
+                className={`text-sm transition-colors duration-200 tracking-wide ${dark ? 'text-paper/75 hover:text-paper' : 'text-navy/70 hover:text-navy'}`}>
                 {link}
               </button>
             </li>
@@ -37,30 +50,26 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/acsah-lukose" target="_blank" rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-ink transition-colors">LinkedIn</a>
-          <a href="https://github.com/acsahl" target="_blank" rel="noopener noreferrer"
-            className="text-sm px-4 py-2 rounded-lg text-white font-medium transition-all duration-200"
-            style={{background:'#111118'}}>
-            GitHub
+          <a href="mailto:lukoseacsah@gmail.com"
+            className="pill inline-flex items-center px-5 py-2 text-sm font-medium bg-amber text-navy hover:bg-amber-dark transition-colors">
+            Get in touch!
           </a>
         </div>
 
         <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className={`block w-5 h-0.5 bg-ink/60 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink/60 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink/60 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${dark ? 'bg-paper' : 'bg-navy'} ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${dark ? 'bg-paper' : 'bg-navy'} ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${dark ? 'bg-paper' : 'bg-navy'} ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-border px-6 py-5 flex flex-col gap-5">
+        <div className="md:hidden bg-navy text-paper px-6 py-5 flex flex-col gap-5">
           {links.map(link => (
             <button key={link} onClick={() => scrollTo(link)}
-              className="text-left text-muted hover:text-ink text-sm">{link}</button>
+              className="text-left text-paper/80 hover:text-paper text-sm">{link}</button>
           ))}
-          <a href="https://github.com/acsahl" target="_blank" rel="noopener noreferrer"
-            className="text-sm font-medium text-ink">GitHub ↗</a>
+          <a href="mailto:lukoseacsah@gmail.com" className="text-sm font-medium text-amber">Get in touch ↗</a>
         </div>
       )}
     </header>
