@@ -29,6 +29,7 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         display: ['Fraunces', 'Georgia', 'serif'],
+        name: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       boxShadow: {
         card: '0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06)',
