@@ -24,6 +24,21 @@
   }
   .btn-primary:active { transform: scale(0.98); }
 
+  .eyebrow {
+    @apply text-[11px] tracking-[0.18em] uppercase mb-2;
+  }
+
+  /* Hairline underline that draws in from the left on hover */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s ease, opacity 0.2s ease;
+    padding-bottom: 2px;
+  }
+  .link-underline:hover { background-size: 100% 1px; }
+
   .pill {
     border-radius: 999px;
     transition: all 0.2s ease;
