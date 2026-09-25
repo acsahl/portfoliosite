@@ -53,11 +53,11 @@ export default function Cover() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.15, ease }}
-            className="font-display tracking-[-0.035em] leading-[0.85] w-full"
-            style={{ fontSize: 'clamp(4.25rem, 16.5vw, 15.5rem)', fontVariationSettings: '"opsz" 144' }}
+            className="font-name tracking-[-0.03em] leading-[0.85] w-full"
+            style={{ fontSize: 'clamp(4.25rem, 16.5vw, 15.5rem)' }}
           >
-            <span className="font-medium">Acsah</span><br />
-            <span className="italic font-light text-amber pl-[0.6em]">Lukose.</span>
+            <span className="font-normal">Acsah</span><br />
+            <span className="italic font-normal text-amber pl-[0.6em]">Lukose.</span>
           </motion.h1>
         </div>
 
