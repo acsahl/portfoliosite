@@ -1,11 +1,11 @@
-// Option C: navy "screening room". One large player; the list beside it switches the project.
+// Navy "screening room". One large player; the list beside it switches the project.
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { projects } from './data'
 import VideoSlot from './VideoSlot'
 import Header, { TechList } from './Header'
 
-export default function FeaturedLayout() {
+export default function SpotlightLayout() {
   const [active, setActive] = useState(0)
   const p = projects[active]
   return (
