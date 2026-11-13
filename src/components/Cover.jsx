@@ -66,19 +66,19 @@ export default function Cover() {
           <div className="py-5 md:pr-8 md:border-r border-paper/15">
             <p className="eyebrow text-paper/50"><span className="font-mono text-amber mr-2">01</span>In brief</p>
             <p className="font-display font-light text-xl leading-snug">
-              Software engineer and CS Honors student at UCF, building <span className="italic">full-stack and mobile</span> products.
+              Software engineer and CS Honors student at UCF, building <span className="italic">backend, AI and full-stack</span> products.
             </p>
           </div>
           <div className="py-5 md:px-8 md:border-r border-paper/15 border-t md:border-t-0">
             <p className="eyebrow text-paper/50"><span className="font-mono text-amber mr-2">02</span>Currently</p>
             <p className="text-sm leading-relaxed text-paper/70">
-              TA for Computer Science I · Senior design on Vitality, a health platform for older adults.
+              Project manager for Vitality, an AI fall-risk platform for older adults (UCF senior design) · TA for Computer Science I.
             </p>
           </div>
           <div className="py-5 md:pl-8 border-t md:border-t-0 border-paper/15">
             <p className="eyebrow text-paper/50"><span className="font-mono text-amber mr-2">03</span>Previously</p>
             <p className="text-sm leading-relaxed text-paper/70">
-              Software Engineering Intern, BNY.{' '}
+              Software Engineering Intern at BNY, twice · SWE & UX/UI Intern at Life Stages.{' '}
               <a href="mailto:lukoseacsah@gmail.com" className="link-underline text-amber">Say hello&nbsp;→</a>
             </p>
           </div>
