@@ -3,9 +3,9 @@
 export const projects = [
   {
     name: 'Vitality',
-    tagline: 'Health dashboard for older adults',
-    desc: 'Team project at UCF. A large-type health dashboard for older adults that pulls sleep, steps and weight from their devices, tracks goals, and turns daily check-ins into a weekly fall-risk level with simple tips.',
-    tech: ['React', 'TypeScript', 'Recharts', 'FastAPI'],
+    tagline: 'AI fall-risk platform for older adults',
+    desc: 'UCF senior design, sponsored by the Morse Genius Healthy Aging Research Lab. I lead the 5-person team as project manager. The platform fuses wearable, body-composition and voice data into an explainable logistic-regression fall-risk score, served by FastAPI on AWS, behind a large-type dashboard built for older adults.',
+    tech: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'AWS'],
     github: 'https://github.com/UCF-Vitality/Vitality',
     year: '2026',
     video: '/videos/vitality.mp4',
@@ -24,9 +24,9 @@ export const projects = [
   },
   {
     name: "Knight's Pantry",
-    tagline: 'Hackathon winner, built in 12 hours',
-    desc: 'Built in 12 hours at a hackathon — a campus food pantry app. Won.',
-    tech: ['Expo', 'React Native', 'Gemini API', 'MongoDB'],
+    tagline: 'Winner, 2025 Gemiknights Hackathon',
+    desc: 'A cross-platform (iOS, Android, web) pantry app for UCF\'s 60,000+ students, shipped in a 12-hour sprint. Gemini-powered OCR identifies donated products from a photo, cutting donation logging time by 60%.',
+    tech: ['Expo', 'React Native', 'Node.js', 'MongoDB', 'Gemini API'],
     github: 'https://github.com/acsahl/KnightsPantry',
     year: '2025',
     highlight: true,

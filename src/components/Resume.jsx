@@ -1,16 +1,56 @@
 import { motion } from 'motion/react'
 
 const education = [
-  { when: '2023 – 2027', what: 'University of Central Florida', sub: 'BS Computer Science, Honors' },
+  {
+    when: '2023 – May 2027',
+    what: 'University of Central Florida',
+    sub: 'B.S. Computer Science (Honors), Minor in Digital Media · GPA 3.73',
+  },
 ]
 
 const experience = [
-  { when: '2026', role: 'Software Engineering Intern', org: 'Bank of New York' },
-  { when: '2026', role: 'SWE & UX/UI Design Intern', org: 'Life Stages' },
-  { when: '2026 –', role: 'Teaching Assistant', org: 'UCF Data Structures & Algorithms' },
+  {
+    when: 'Summer 2026',
+    role: 'Software Engineering Intern',
+    org: 'BNY · Lake Mary, FL',
+    note: 'Built a generative-AI agent that cut redemption-request processing time by 50%, plus a Spring Boot REST API extending DocVault to non-custody clients.',
+  },
+  {
+    when: 'Fall 2025',
+    role: 'Software Engineering Intern',
+    org: 'BNY · Orlando, FL',
+    note: 'Built a Python and Spring Boot monitoring service on Prometheus and Grafana, with Docker agents running audited recovery workflows.',
+  },
+  {
+    when: 'Summer 2025',
+    role: 'SWE & UX/UI Design Intern',
+    org: 'Life Stages',
+    note: 'Shipped React Native and Flutter features and Figma prototypes for guided meditation and journaling.',
+  },
+  {
+    when: '2025 –',
+    role: 'Undergraduate Teaching Assistant',
+    org: 'UCF · Computer Science I',
+    note: 'Lead weekly problem-solving sessions and 1-on-1 debugging for 60+ students.',
+  },
 ]
 
-const skills = ['React', 'Python', 'TypeScript', 'Node.js', 'MongoDB', 'Docker']
+const skills = [
+  'Java', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C',
+  'Spring Boot', 'FastAPI', 'Node.js', 'React', 'React Native', 'Flutter',
+  'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB',
+  'Prometheus', 'Grafana', 'Gemini API', 'MCP', 'Figma',
+]
+
+const awards = [
+  'KnightHacks — Winner',
+  'Gemiknights 2025 — Winner',
+  'BNY Good Within Case Competition — Team Lead',
+  'InterVarsity — Club President',
+  'CodePath — Tech Fellow',
+]
+
+const certs = 'AWS Cloud Security Foundations · Azure AZ-900 · PCEP Python · Google AI Essentials'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -48,11 +88,12 @@ export default function Resume() {
               <p className="font-mono text-xs tracking-widest mb-4 text-navy/70">EXPERIENCE</p>
               <div className="flex flex-col gap-4">
                 {experience.map(e => (
-                  <div key={e.role} className="flex gap-4">
-                    <span className="text-navy/50 font-mono text-xs shrink-0 mt-0.5 w-12">{e.when}</span>
+                  <div key={e.when + e.role} className="flex gap-4">
+                    <span className="text-navy/50 font-mono text-xs shrink-0 mt-0.5 w-20">{e.when}</span>
                     <div>
                       <p className="font-semibold text-navy leading-snug">{e.role}</p>
                       <p className="text-sm text-navy/70">{e.org}</p>
+                      <p className="text-sm text-navy/80 mt-1 leading-snug">{e.note}</p>
                     </div>
                   </div>
                 ))}
@@ -82,9 +123,22 @@ export default function Resume() {
               ))}
             </div>
 
+            <p className="font-mono text-xs tracking-widest mb-4 text-amber">AWARDS &amp; LEADERSHIP</p>
+            <div className="space-y-2.5 mb-14">
+              {awards.map(item => (
+                <div key={item} className="flex items-center gap-2.5 text-sm text-paper/75">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <p className="font-mono text-xs tracking-widest mb-4 text-amber">CERTIFICATIONS</p>
+            <p className="text-sm text-paper/75 leading-relaxed mb-14">{certs}</p>
+
             <p className="font-mono text-xs tracking-widest mb-4 text-amber">CURRENTLY</p>
             <div className="space-y-2.5">
-              {['Open to Fall 2026 roles', 'Shipping side projects', 'Learning something new'].map(item => (
+              {['Open to new-grad SWE roles for 2027', 'Project manager for Vitality, UCF senior design', 'TA for Computer Science I'].map(item => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-paper/75">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
                   {item}
