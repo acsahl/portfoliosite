@@ -11,11 +11,12 @@ export const projects = [
     video: null
   },
   {
-    name: 'StudyBuddy',
-    tagline: 'Placeholder until I can read the project',
-    desc: 'Description coming once I can see the StudyBuddy code.',
-    tech: ['Stack', 'Goes', 'Here'],
-    github: 'https://github.com/acsahl',
+    name: 'StudyHub',
+    tagline: 'Breaks big assignments into small tasks',
+    desc: 'Team project for COP4331 at UCF. A task manager that splits overwhelming assignments into subtasks, with study groups, a calendar, a daily digest, a Pomodoro timer and email verification. Web app plus a Flutter mobile client.',
+    tech: ['React', 'TypeScript', 'Express', 'MongoDB', 'Flutter'],
+    github: 'https://github.com/ThineRuler/study-hub',
+    live: 'http://poosd-group15.com/login',
     year: '2026',
     video: null,
   },

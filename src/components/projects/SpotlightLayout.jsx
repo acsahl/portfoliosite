@@ -27,8 +27,14 @@ export default function SpotlightLayout() {
                   </div>
                   <div className="flex flex-col gap-3 sm:items-end">
                     <TechList tech={p.tech} dark />
-                    <a href={p.github} target="_blank" rel="noopener noreferrer"
-                      className="btn-primary rounded-full px-4 py-1.5 text-sm font-medium">GitHub →</a>
+                    <div className="flex gap-2">
+                      {p.live && (
+                        <a href={p.live} target="_blank" rel="noopener noreferrer"
+                          className="rounded-full px-4 py-1.5 text-sm font-medium text-paper border border-paper/30 hover:border-paper transition-colors">Live site ↗</a>
+                      )}
+                      <a href={p.github} target="_blank" rel="noopener noreferrer"
+                        className="btn-primary rounded-full px-4 py-1.5 text-sm font-medium">GitHub →</a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
