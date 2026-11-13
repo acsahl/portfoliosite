@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 
 // A 16:9 video frame. Plays muted on hover when `src` is set; otherwise shows a placeholder.
-export default function VideoSlot({ src, label, dark = false, playing, className = '' }) {
+export default function VideoSlot({ src, poster, label, dark = false, playing, className = '' }) {
   const ref = useRef(null)
   const controlled = playing !== undefined
 
@@ -17,7 +17,7 @@ export default function VideoSlot({ src, label, dark = false, playing, className
       className={`relative aspect-video overflow-hidden rounded-xl ${dark ? 'bg-navy-light' : 'bg-paper-dim'} ${className}`}
     >
       {src ? (
-        <video ref={ref} src={src} muted loop playsInline autoPlay={controlled && playing}
+        <video ref={ref} src={src} poster={poster} muted loop playsInline autoPlay={controlled && playing} preload="metadata"
           className="absolute inset-0 w-full h-full object-cover" />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3"

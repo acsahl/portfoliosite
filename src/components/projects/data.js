@@ -1,5 +1,5 @@
-// Placeholder content for the layout previews. Real projects from the resume replace these.
-// `video` is a path under /public/videos (e.g. '/videos/dialedin.mp4'); leave null until recorded.
+// Projects shown in the Work section, in display order.
+// `video` and `poster` are paths under public/videos; leave video null to show the placeholder.
 export const projects = [
   {
     name: 'Vitality',
@@ -8,7 +8,8 @@ export const projects = [
     tech: ['React', 'TypeScript', 'Recharts', 'FastAPI'],
     github: 'https://github.com/UCF-Vitality/Vitality',
     year: '2026',
-    video: null
+    video: '/videos/vitality.mp4',
+    poster: '/videos/vitality.jpg',
   },
   {
     name: 'StudyHub',
@@ -18,7 +19,8 @@ export const projects = [
     github: 'https://github.com/ThineRuler/study-hub',
     live: 'http://poosd-group15.com/login',
     year: '2026',
-    video: null,
+    video: '/videos/studyhub.mp4',
+    poster: '/videos/studyhub.jpg',
   },
   {
     name: "Knight's Pantry",

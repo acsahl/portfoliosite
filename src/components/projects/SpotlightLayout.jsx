@@ -19,7 +19,7 @@ export default function SpotlightLayout() {
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div key={p.name} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
-                <VideoSlot src={p.video} label={p.name} dark playing />
+                <VideoSlot src={p.video} poster={p.poster} label={p.name} dark playing />
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mt-6">
                   <div className="max-w-md">
                     <h3 className="font-display font-bold text-paper text-2xl mb-2">{p.name} {p.highlight && '🏆'}</h3>
