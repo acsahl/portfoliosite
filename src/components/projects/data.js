@@ -30,15 +30,17 @@ export const projects = [
     github: 'https://github.com/acsahl/KnightsPantry',
     year: '2025',
     highlight: true,
-    video: null
+    video: '/videos/knightspantry.mp4',
+    poster: '/videos/knightspantry.jpg',
   },
-{
+  {
     name: 'DialedIn',
     tagline: 'AI-generated workout plans',
     desc: 'React Native fitness app with AI-generated workout plans, powered by Gemini.',
     tech: ['React Native', 'Expo', 'MongoDB', 'Gemini'],
     github: 'https://github.com/acsahl/DialedIn',
     year: '2025',
-    video: null
+    video: '/videos/dialedin.mp4',
+    poster: '/videos/dialedin.jpg',
   },
 ]
