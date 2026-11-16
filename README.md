@@ -1,6 +1,6 @@
 # Acsah Lukose — portfolio
 
-The source for [acsahlukose.netlify.app](https://acsahlukose.netlify.app/): a single-page portfolio laid out like a
+The source for [acsahportfolio.netlify.app](https://acsahportfolio.netlify.app/): a single-page portfolio laid out like a
 magazine, with recorded demos of four projects, an architecture walkthrough of Vitality, and a MIPS instruction decoder
 that runs in the browser.
 
