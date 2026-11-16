@@ -1,39 +1,75 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1480px',
+    },
     extend: {
       colors: {
-        surface: '#f2f2f7',
-        card: '#ffffff',
-        border: '#e4e4eb',
-        'border-light': '#d0d0da',
-        ink: '#111118',
-        muted: '#6b6b7b',
-        green: {
-          spotify: '#1DB954',
-          light: '#1ed760',
+        // Night chapters
+        ink: {
+          DEFAULT: '#12151B',
+          950: '#090B0F',
+          900: '#0E1116',
+          800: '#181C23',
+          700: '#232832',
+          600: '#343A46',
+          500: '#4A515E',
         },
-        // Chapter palette
-        navy: '#12151B',
-        'navy-light': '#1D2129',
-        paper: '#F6F1E7',
-        'paper-dim': '#EDE6D6',
-        amber: '#F0A63A',
-        'amber-dark': '#D6862A',
-        cobalt: '#3F5DFF',
-        'cream-muted': '#B7B2A5',
-        'ink-muted': '#6B6858',
+        // Day chapters
+        paper: {
+          DEFAULT: '#F6F1E7',
+          50: '#FCFAF5',
+          100: '#F6F1E7',
+          200: '#EEE7D8',
+          300: '#E3D9C5',
+          400: '#D3C6AC',
+        },
+        amber: {
+          DEFAULT: '#F0A63A',
+          200: '#FAD9A4',
+          300: '#F6C473',
+          400: '#F0A63A',
+          500: '#DE8F24',
+          700: '#94570A', // amber that passes AA as text on paper
+        },
+        mist: '#A9A499', // secondary text on ink (7:1)
+        stone: '#5C584D', // secondary text on paper (6:1)
+        signal: '#5BD08A', // "available" dot
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-        display: ['Fraunces', 'Georgia', 'serif'],
-        name: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Playfair Display Variable"', '"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Geist Variable"', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        mono: ['"Geist Mono Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
-      boxShadow: {
-        card: '0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06)',
-        'card-hover': '0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.10)',
+      fontSize: {
+        eyebrow: ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.14em' }],
+      },
+      maxWidth: {
+        page: '1360px',
+      },
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'in-out': 'cubic-bezier(0.65, 0, 0.35, 1)',
+      },
+      keyframes: {
+        pulseDot: {
+          '0%': { transform: 'scale(1)', opacity: '0.55' },
+          '70%': { transform: 'scale(2.6)', opacity: '0' },
+          '100%': { transform: 'scale(2.6)', opacity: '0' },
+        },
+        flow: {
+          to: { strokeDashoffset: '-24' },
+        },
+      },
+      animation: {
+        'pulse-dot': 'pulseDot 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        flow: 'flow 1.2s linear infinite',
       },
     },
   },
