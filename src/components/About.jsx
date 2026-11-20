@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" data-section="about" data-theme="light" aria-labelledby="about-title" className="paper-grain bg-paper text-ink">
       <div className="page py-28 lg:py-40">
-        <SectionHeader id="about-title" number="04" label="About" aside="Orlando, FL" title="The longer version." italic={[1]} />
+        <SectionHeader id="about-title" number="03" label="About" aside="Orlando, FL" title="The longer version." italic={[1]} />
 
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">

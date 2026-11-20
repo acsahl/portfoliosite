@@ -17,7 +17,7 @@ export default function Contact() {
       <div className="page relative pb-20 pt-28 lg:pb-24 lg:pt-40">
         <div className="eyebrow flex items-baseline justify-between gap-6 pb-4 text-mist">
           <span>
-            <span className="text-amber">05</span>
+            <span className="text-amber">04</span>
             <span aria-hidden="true" className="mx-2 opacity-60">/</span>Contact
           </span>
           <span className="whitespace-nowrap">

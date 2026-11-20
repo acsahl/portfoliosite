@@ -21,7 +21,6 @@ export const site = {
 export const sections = [
   { id: 'experience', label: 'Experience', theme: 'light' },
   { id: 'work', label: 'Work', theme: 'dark' },
-  { id: 'lab', label: 'Lab', theme: 'light' },
   { id: 'about', label: 'About', theme: 'light' },
   { id: 'contact', label: 'Contact', theme: 'dark' },
 ]
@@ -30,7 +29,6 @@ export const sections = [
 export const coverLines = [
   { id: 'experience', line: 'The agent behind the 50%' },
   { id: 'work', line: 'Watch four projects run' },
-  { id: 'lab', line: 'Flip the bits of a MIPS word' },
   { id: 'about', line: 'Honors, coursework, toolbox' },
 ]
 
@@ -293,17 +291,6 @@ export const vitalityPipeline = [
     services: ['React on CloudFront', 'Cognito sign-in'],
   },
 ]
-
-export const mips = {
-  title: 'Single-cycle MIPS processor simulator',
-  course: 'Computer Logic & Organization',
-  date: 'Nov 2024',
-  language: 'C',
-  summary:
-    'For Computer Logic & Organization I implemented the datapath and control unit of a single-cycle MIPS processor in C: instruction fetch, decode, control-signal generation, register reads and writes, sign extension, the ALU, memory access, and the PC update for branches and jumps.',
-  detail:
-    'Bitwise masking and shifting split each 32-bit instruction into its fields. Word-alignment and address-bounds checks halt the machine on an invalid fetch or memory access, and I validated execution against hand-assembled MIPS test programs in a SPIM-style harness.',
-}
 
 export const education = {
   school: 'University of Central Florida',

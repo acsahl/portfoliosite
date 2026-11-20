@@ -1,8 +1,7 @@
 # Acsah Lukose — portfolio
 
 The source for [acsahportfolio.netlify.app](https://acsahportfolio.netlify.app/): a single-page portfolio laid out like a
-magazine, with recorded demos of four projects, an architecture walkthrough of Vitality, and a MIPS instruction decoder
-that runs in the browser.
+magazine, with recorded demos of four projects and an architecture walkthrough of Vitality.
 
 Built with React 18, Vite, Tailwind CSS and [Motion](https://motion.dev/). Hosted on Netlify.
 
@@ -23,7 +22,6 @@ npm run preview   # serve the build at http://localhost:4173
 | `src/components/Hero.jsx` | Nameplate, intro and the four headline numbers |
 | `src/components/Experience.jsx` | Roles, plus the diagram of the BNY agent |
 | `src/components/work/` | Project switcher, demo video player, device frames, Vitality pipeline |
-| `src/components/lab/Lab.jsx` | The MIPS decoder (`src/lib/mips.js` holds the decode logic) |
 | `src/components/About.jsx`, `Contact.jsx`, `Footer.jsx` | The rest of the page |
 | `src/components/Nav.jsx`, `CommandPalette.jsx` | Navigation and the ⌘K / Ctrl K menu |
 | `src/components/ui/` | Shared pieces: icons, scroll reveals, section headers |
